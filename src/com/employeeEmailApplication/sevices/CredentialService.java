@@ -17,27 +17,27 @@ public class CredentialService {
         String lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
         String specialCharacters = "!@#$";
         String numbers = "1234567890";
-        String combinedChars = capitalCaseLetters + lowerCaseLetters + specialCharacters + numbers;
-        Random random = new Random();
-        char[] password = new char[8];
+        char[] _password = new char[8];
 
-        password[0] = lowerCaseLetters.charAt(random.nextInt(lowerCaseLetters.length()));
-        password[1] = capitalCaseLetters.charAt(random.nextInt(capitalCaseLetters.length()));
-        password[2] = specialCharacters.charAt(random.nextInt(specialCharacters.length()));
-        password[3] = numbers.charAt(random.nextInt(numbers.length()));
+        _password[0] = lowerCaseLetters.charAt((int)(Math.random() * lowerCaseLetters.length()));
+        _password[1] = capitalCaseLetters.charAt((int)(Math.random() * capitalCaseLetters.length()));
+        _password[2] = specialCharacters.charAt((int)(Math.random() * specialCharacters.length()));
+        _password[3] = numbers.charAt((int)(Math.random() * numbers.length()));
+        _password[4] = lowerCaseLetters.charAt((int)(Math.random() * lowerCaseLetters.length()));
+        _password[5] = capitalCaseLetters.charAt((int)(Math.random() * capitalCaseLetters.length()));
+        _password[6] = specialCharacters.charAt((int)(Math.random() * specialCharacters.length()));
+        _password[7] = numbers.charAt((int)(Math.random() * numbers.length()));
 
-        for (int i = 4; i < 8; i++) {
-            password[i] = combinedChars.charAt(random.nextInt(combinedChars.length()));
-        }
 
-        this.password = password.toString();
+        this.password = String.copyValueOf(_password);
     }
 
     public void generateEmailAddress(String department, employee employee) {
         this.email = employee.getFirstName() + employee.getLastName() + "@" + department + GreatLearning;
     }
 
-    public void showCredentials() {
+    public void showCredentials(employee employee) {
+        System.out.println("Dear " + employee.getFirstName() +" your generated credentials are as follows");
         System.out.println("\n Email     ------> " + this.email);
         System.out.println("\n Password  ------> " + this.password);
     }

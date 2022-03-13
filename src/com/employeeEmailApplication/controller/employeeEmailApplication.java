@@ -74,10 +74,9 @@ public class employeeEmailApplication{
 
     private static void generator(String department, employee employee)
     {
-        
         CredentialService credentialService = new CredentialService();
         credentialService.generateEmailAddress(department, employee);
         credentialService.generatePassword();
-        credentialService.showCredentials();
+        credentialService.showCredentials(employee);
     }
 }
