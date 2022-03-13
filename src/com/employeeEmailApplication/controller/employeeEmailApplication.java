@@ -1,5 +1,4 @@
 package com.employeeEmailApplication.controller;
-import java.io.IOException;
 import java.util.Scanner;
 import com.employeeEmailApplication.model.employee;
 import com.employeeEmailApplication.sevices.CredentialService;
@@ -44,7 +43,7 @@ public class employeeEmailApplication{
             System.out.println("\n Option :");
             
             choice = scanner.nextInt();
-            
+
             switch (choice) {
                 case 1: //Tech                    
                     generator("Technical", employee);
