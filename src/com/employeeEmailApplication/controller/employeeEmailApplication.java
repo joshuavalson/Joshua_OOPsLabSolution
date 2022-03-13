@@ -19,7 +19,7 @@ public class employeeEmailApplication{
             System.out.println("\n Please enter Employee Last Name :");
             String lname = scanner.nextLine();
 
-            employee = new employee(fname, lname);
+            employee = new employee(fname.trim(), lname.trim());
 
             if(!employee.getFirstName().isEmpty() && !employee.getLastName().isEmpty())
             {

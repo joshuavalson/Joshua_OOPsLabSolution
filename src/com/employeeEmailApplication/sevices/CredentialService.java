@@ -15,7 +15,7 @@ public class CredentialService {
 
         String capitalCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
-        String specialCharacters = "!@#$";
+        String specialCharacters = "!@#$%^&*()/?<>";
         String numbers = "1234567890";
         char[] _password = new char[8];
 
@@ -29,7 +29,7 @@ public class CredentialService {
         _password[7] = numbers.charAt((int)(Math.random() * numbers.length()));
 
 
-        this.password = String.copyValueOf(_password);
+        this.password = String.valueOf(_password);
     }
 
     public void generateEmailAddress(String department, employee employee) {
