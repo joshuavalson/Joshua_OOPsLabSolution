@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class CredentialService {
 
-    public static String GreatLearning = ".GreatLearning.com";
+    public final String GreatLearning = ".GreatLearning.com";
 
     private String email;
     private String password;
